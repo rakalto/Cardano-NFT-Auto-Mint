@@ -2,6 +2,8 @@
 
 *Disclaimer: This software is provided as-is with no warranty. I take no responsibility for lost funds while using this system.*
 
+Forked from *ejane24*'s original project so I can mess about with it for my own needs. Feel free to use it. Any significant changes will be documented here if (or when) they happen.
+
 ## What is this software?
 
 This is an automated minting and distribution system for Cardano NFTs. It is designed to allow small creators to automate their sales with as little hassle as possible!
@@ -22,7 +24,7 @@ To get started with the system it is first necessary to download the files.
 
 First cd into the directory where your node is running (cardano-my-node if you followed the CoinCashew guide) and then run the following commands:
 ```
-git clone https://github.com/ejane24/Cardano-NFT-Auto-Mint.git
+git clone https://github.com/ftpmorph/Cardano-NFT-Auto-Mint.git
 cd Cardano-NFT-Auto-Mint/
 ls
 ```
