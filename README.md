@@ -4,6 +4,8 @@
 
 Forked from *ejane24*'s original project so I can mess about with it for my own needs. Feel free to use it. Any significant changes will be documented here if (or when) they happen.
 
+The *setup.sh* file is an addition created for this fork that automates setup of a Cardano node by installing 1.27.0 and generating the necessary keys and a payment address in neatly organised directories. Consider it under development - I cannot currently promise it will work, but I will test it on Ubuntu 20.04.2 LTS shortly.
+
 ## What is this software?
 
 This is an automated minting and distribution system for Cardano NFTs. It is designed to allow small creators to automate their sales with as little hassle as possible!
