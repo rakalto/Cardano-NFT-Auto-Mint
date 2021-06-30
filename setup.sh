@@ -2,12 +2,16 @@ wget https://hydra.iohk.io/build/6797922/download/1/cardano-node-1.27.0-linux.ta
 tar xzvf cardano-node-1.27.0-linux.tar.gz
 rm cardano-node-1.27.0-linux.tar.gz
 
-./cardano-node run --topology ./mainnetconfig/mainnet-topology.json --database-path ./state-mainnet --port 3001
---config ./mainnetconfig/mainnet-config.json --socket-path ~/cardano-mainnet.socket
-export CARDANO_NODE_SOCKET_PATH=~/cardano-mainnet.socket
+cardano-node run \
+--topology mainnet-topology.json \
+--database-path /db \
+--socket-path /db/node.socket \
+--host-addr $(ip -4 addr show ens3 | grep -oP '(?<=inet\s)\d+(\.\d+){3}') \
+--port 3001 \
+--config mainnet-config.json
 
 mkdir payment
-cd payment/
+cd payment
 
 cardano-cli address key-gen \
 --verification-key-file payment.vkey \
