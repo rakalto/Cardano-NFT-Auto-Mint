@@ -27,3 +27,19 @@ cardano-cli address build \
 echo $(cat ./payment.addr)
 
 cd ..
+
+mkdir policy
+
+cardano-cli address key-gen \
+--verification-key-file policy/policy.vkey \
+--signing-key-file policy/policy.skey
+
+touch policy/policy.script && echo "" > policy/policy.script
+
+echo "{" >> policy/policy.script 
+echo "  \"keyHash\": \"$(cardano-cli address key-hash --payment-verification-key-file policy/policy.vkey)\"," >> policy/policy.script 
+echo "  \"type\": \"sig\"" >> policy/policy.script 
+echo "}" >> policy/policy.script
+
+cardano-cli transaction policyid --script-file ./policy/policy.script >> policy/policyID
+echo $(cat policy/policyID)
