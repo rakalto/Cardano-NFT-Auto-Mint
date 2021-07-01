@@ -6,11 +6,11 @@ log=log_file.txt
 txs=txs.txt
 numberCompleted=0
 donationAddr=addr1q807hrj7ys6t0xmvncxq5aqxyh0jn8kg4r2se2aayywcxp4sr6cky3j7v0nhdldr287z3sjpl8ccg7myzc4tasvgfjcq9t9ur7
-paymentAddr=addr1q96lgwymtwa6zhh80um97v4eute0pzfnxkd0mkj9dnn5dc9sr6cky3j7v0nhdldr287z3sjpl8ccg7myzc4tasvgfjcqmegdmt
-paymentSignKeyPath="Insert path to skey here"
-policySignKeyPath="Insert path to skey here"
-scriptPath="Insert path to script file here"
-profitAddr="Insert profit address here"
+paymentAddr=addr1v9vw6s2x2rmq5zx2vpct2vyje4ln59mv7v47afycx2ghpcsfn0gyd
+paymentSignKeyPath=./payment/payment.skey
+policySignKeyPath=./policy/policy.skey
+scriptPath=./policy/policy.script
+profitAddr=addr1q96lgwymtwa6zhh80um97v4eute0pzfnxkd0mkj9dnn5dc9sr6cky3j7v0nhdldr287z3sjpl8ccg7myzc4tasvgfjcqmegdmt
 echo "" >> $txs
 echo "" >> $log
 echo "Log File" >> $log
@@ -98,7 +98,7 @@ while (( looping )); do
 		    --mint="1 $POLICYID.${name}" \
 		    --minting-script-file $scriptPath \
 		    --metadata-json-file ./metadata/${metadata_file} \
-                    --invalid-hereafter $(( ${currentSlot} + 420690)) \
+                    --invalid-hereafter $(( ${currentSlot} + 10000)) \
                     --out-file tx.tmp >> $log
                 fee=$(cardano-cli transaction calculate-min-fee \
                     --tx-body-file tx.tmp \
@@ -119,7 +119,7 @@ while (( looping )); do
 		    --mint="1 $POLICYID.${name}" \
                     --minting-script-file $scriptPath \
 		    --metadata-json-file ./metadata/${metadata_file} \
-                    --invalid-hereafter $(( ${currentSlot} + 420690)) \
+                    --invalid-hereafter $(( ${currentSlot} + 10000)) \
                     --out-file tx.raw >> $log
                 cardano-cli transaction sign \
                     --signing-key-file $paymentSignKeyPath \
