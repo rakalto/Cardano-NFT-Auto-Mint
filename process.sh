@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /nftvendor/cardano-node-1.27.0-linux/Cardano-NFT-Auto-Mint/
+cd /home/$(whoami)/Cardano-NFT-Auto-Mint
 looping=1
 log=log_file.txt
 txs=txs.txt
