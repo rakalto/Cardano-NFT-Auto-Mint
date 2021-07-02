@@ -85,9 +85,9 @@ while (( looping )); do
 	        POLICYID=$(cardano-cli transaction policyid --script-file $scriptPath)
                 metadata_file=$(ls metadata/ | sort -R | tail -1)
                 name=$(echo ${metadata_file} | awk '{ print substr( $0, 1, length($0)-5 ) }')
-                amountToSendUser=1500000
+                amountToSendUser=1700000
 	        amountToDonate=5000000
-	        amountToSendProfit=8500000
+	        amountToSendProfit=8300000
                 currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
                 cardano-cli transaction build-raw \
                     --fee 0 \
