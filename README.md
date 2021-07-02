@@ -109,14 +109,14 @@ Once you have done that, we need to change how much your NFTs cost.
 
 To do this, go to line 48 and change 15000000 to your price in **lovelace**. 1 ADA = 1,000,000 lovelace. [Here is a calculator](https://bluehares.com/cardano-ada-lovelace-calculator/) to double check your values are correct.
 
-Next change the value of *amountToSendProfit* on line 90 to your price in lovelace minus 6700000. This accounts for the 1.7 ADA sent back to the user and a 5 ADA voluntary donation (more on that later).
+Next change the value of *amountToSendProfit* on line 90 to your price in lovelace minus 6700000. This accounts for the 1.7 ADA sent back to the user and a 5 ADA voluntary donation.
 
 #### Voluntary Donations
-The script includes a voluntary donation on 5 ADA per sale. It is completely up to you whether you leave this in. To remove the donation, simply change line 8 to your own address. You can also increase or decrease this amount as you like but don't forget to update the profit amount. (although there needs to be at least 1 ADA for the transaction to work, hence changing the donation address is best).
+The script includes a voluntary donation on 5 ADA per sale. It is completely up to you whether you leave this in. To remove the donation, simply change line 8 to your own address. You can also increase or decrease this amount as you like but don't forget to update the profit amount (although there needs to be at least 1 ADA for the transaction to work, hence changing the donation address is best).
 
 ### Step 4 - Add the metadata
 
-Now we need to make a folder which will contain all the NFT metadata json files. Make sure this is is created in the same directory as *process.sh*.
+Now we need to make a folder which will contain all the NFT metadata json files. Make sure this is created in the same directory as *process.sh*.
 
 ```
 mkdir metadata
@@ -129,7 +129,7 @@ Next, simply place all the metadata files (one for each NFT) in this folder as .
 In order for the system to run 24/7 we need to create a systemd service:
 
 ```
-nano /etc/systemd/system/vendingmachine.service
+sudo nano /etc/systemd/system/vendingmachine.service
 ```
 
 Now paste the following into the text editor:
@@ -151,7 +151,7 @@ WantedBy=multi-user.target
 Save and exit the file and then type:
 
 ```
-cp process.sh /usr/bin/vendingmachine.sh
+sudo cp process.sh /usr/bin/vendingmachine.sh
 ```
 
 Before this will work we need to make sure *cardano-cli* and *cardano-node* are in system directories. The Guild setup puts those programs in your home folder which won't work for a systemd service.
