@@ -1,12 +1,12 @@
 #!/bin/bash
 
-cd /home/$(whoami)/Cardano-NFT-Auto-Mint
+cd /home/$(whoami)/git/Cardano-NFT-Auto-Mint
 looping=1
 log=log_file.txt
 txs=txs.txt
 numberCompleted=0
 donationAddr=addr1q807hrj7ys6t0xmvncxq5aqxyh0jn8kg4r2se2aayywcxp4sr6cky3j7v0nhdldr287z3sjpl8ccg7myzc4tasvgfjcq9t9ur7
-paymentAddr=addr1v9vw6s2x2rmq5zx2vpct2vyje4ln59mv7v47afycx2ghpcsfn0gyd
+paymentAddr=addr1vxql7n5fe2l6t3feqtl57gvrtu4f24jhpp4srkf3u92ut5gn0kxfx
 paymentSignKeyPath=./payment/payment.skey
 policySignKeyPath=./policy/policy.skey
 scriptPath=./policy/policy.script
