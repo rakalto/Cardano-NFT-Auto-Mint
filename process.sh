@@ -5,12 +5,12 @@ looping=1
 log=log_file.txt
 txs=txs.txt
 numberCompleted=0
-donationAddr=addr1q807hrj7ys6t0xmvncxq5aqxyh0jn8kg4r2se2aayywcxp4sr6cky3j7v0nhdldr287z3sjpl8ccg7myzc4tasvgfjcq9t9ur7
+donationAddr=addr1qym982gs3daamlup5vp28w34rz2lsfc8y5qy4k4c4yhgekfddq5lhv662wnmejkkuac87sfate2g68qxvrx99y3vmaxqww64s3
 paymentAddr=addr1vxql7n5fe2l6t3feqtl57gvrtu4f24jhpp4srkf3u92ut5gn0kxfx
 paymentSignKeyPath=./payment/payment.skey
 policySignKeyPath=./policy/policy.skey
 scriptPath=./policy/policy.script
-profitAddr=addr1q96lgwymtwa6zhh80um97v4eute0pzfnxkd0mkj9dnn5dc9sr6cky3j7v0nhdldr287z3sjpl8ccg7myzc4tasvgfjcqmegdmt
+profitAddr=addr1qym982gs3daamlup5vp28w34rz2lsfc8y5qy4k4c4yhgekfddq5lhv662wnmejkkuac87sfate2g68qxvrx99y3vmaxqww64s3
 echo "" >> $txs
 echo "" >> $log
 echo "Log File" >> $log
