@@ -45,7 +45,7 @@ while (( looping )); do
                 https://cardano-mainnet.blockfrost.io/api/v0/txs/${tx_hash}/utxos \
                 | jq '.inputs' | jq '.[0]' | jq '.address' | sed 's/^.//;s/.$//')
             echo "Address: ${in_addr}"
-            if [ ${utxo_balance} != 15000000 ] || [ $(ls "metadata/" | wc -l) == 0 ];
+            if [ ${utxo_balance} != 24000000 ] || [ $(ls "metadata/" | wc -l) == 0 ];
     	    then
 	        echo ${utxo_balance} >> $log
 	        echo "Refund Initiated..." >> $log
@@ -86,8 +86,8 @@ while (( looping )); do
                 metadata_file=$(ls metadata/ | sort -R | tail -1)
                 name=$(echo ${metadata_file} | awk '{ print substr( $0, 1, length($0)-5 ) }')
                 amountToSendUser=1700000
-	        amountToDonate=5000000
-	        amountToSendProfit=8300000
+	        amountToDonate=11500000
+	        amountToSendProfit=10800000
                 currentSlot=$(cardano-cli query tip --mainnet | jq -r '.slot')
                 cardano-cli transaction build-raw \
                     --fee 0 \
